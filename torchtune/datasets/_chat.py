@@ -86,7 +86,7 @@ class ChatDataset(Dataset):
         return len(self._data)
 
     def __getitem__(self, index: int) -> Dict[str, List[int]]:
-        sample = self._data[index]
+        sample = self._data['train'][index]
         return self._prepare_sample(sample)
 
     def _prepare_sample(self, sample: Mapping[str, Any]) -> Dict[str, List[int]]:
